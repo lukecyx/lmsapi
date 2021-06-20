@@ -16,10 +16,8 @@ It is to be used in conjunction with another fontend project, TBC.
 ## Technologies Being Used
 
 * [Django v3.1][1]
-* [django-rest-framework][2]
 
 [1]: https://docs.djangoproject.com/en/3.1/
-[2]: https://www.django-rest-framework.org/
 
 ## Setup and Running Locally
 
