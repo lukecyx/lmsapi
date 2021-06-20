@@ -1,0 +1,13 @@
+: Implment the following tests
+# 1. APIError middleware tests
+# 2. Disable settings.IS_LOCAL and see if it returns a nice error to a consumer.
+# 3. That all optional args are tested.
+# 4. Make sure you test the role.
+# 5. All model validators.
+# 6. Review tests and see what's what.
+# 7. Add a check flake8 script.
+# 8. Add check black script.
+# 9. Add check mypy script.
+# 10. Add check-all script.
+# 11. Write job to import some data
+

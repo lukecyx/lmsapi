@@ -1,0 +1,34 @@
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+### Unit test / coverage reports ###
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+.pytest_cache
+
+
+### Editor crap ###
+.idea
+.vscode
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+settings_local.py
+venv/
+static
+media
+
+### mypy ###
+.myp(y_cache/
+
+### misc ###
+secrets.json
