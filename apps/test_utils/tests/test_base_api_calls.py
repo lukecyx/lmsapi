@@ -37,5 +37,7 @@ def test_successful_post_with_data():
         data=data,
     )
 
+    # print(response)
+    # print(response.content)
     assert response.status_code == HTTPStatus.OK.value
     assert response.content == {"foo": "bar"}

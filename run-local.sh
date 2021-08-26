@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source venv/bin/activate
+#source venv/bin/activate
+poetry shell
 
 uwsgi \
 	--socket /tmp/lms.sock \

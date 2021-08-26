@@ -19,7 +19,9 @@ class APIBase(View):
     """
 
     # Override these in a subclass as needed.
-    http_method_names = ["get", "post"]
+    http_method_names = [
+             "get", "post"
+    ]
 
     # This is now done through Middleware.
     def process_post_request_body(

@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "lmsapi"
+version = "0.1.0"
+description = "Django API backend for a book e-commerce store."
+authors = ["Luke Holmes <lukemartynholmes@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.1.2"
+psycopg2 = "^2.8.6"
+psycopg2-binary = "^2.8.6"
+mkdocs = "^1.2.1"
+django-cors-headers = "^3.7.0"
+python-dotenv = "^0.18.0"
+uWSGI = "^2.0.19"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+pytest-django = "^4.1.0"
+mypy = "^0.910"
+flake8 = "^3.9.2"
+isort = "^5.9.2"
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

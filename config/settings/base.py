@@ -1,6 +1,8 @@
 from pathlib import Path
+from os import environ
+from dotenv import load_dotenv
 
-from .get_secrets import get_secret as secret
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -8,7 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-SECRET_KEY = secret("SECRET_KEY")
+# SECRET_KEY = secret("SECRET_KEY")
+SECRET_KEY = environ.get("SECRET_KEY")
 
 INSTALLED_APPS = [
     # Defaults.
@@ -44,7 +47,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Custom.
-    "apps.lib.middleware.api_error.APIErrorMiddleware"
+    "apps.lib.middleware.api_error.APIErrorMiddleware",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = False

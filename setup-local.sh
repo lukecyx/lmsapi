@@ -2,11 +2,11 @@
 
 [ "$EUID" -ne 0 ] && echo "Please run as root" && exit
 
-python -m venv ./venv
+#python -m venv ./venv
 
-source venv/bin/activate
+#source venv/bin/activate
 
-pip install -r requirements-local.txt
+#pip install -r requirements-local.txt
 
 CURRENTPATH=$(pwd)
 
@@ -17,3 +17,5 @@ if (( ! $(grep -c "lms.local" /etc/hosts) )); then
 else
 	exit
 fi
+
+poetry install
