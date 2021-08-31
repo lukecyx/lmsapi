@@ -1,8 +1,5 @@
 from pathlib import Path
 from os import environ
-from dotenv import load_dotenv
-
-load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -10,7 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECRET_KEY = secret("SECRET_KEY")
 SECRET_KEY = environ.get("SECRET_KEY")
 
 INSTALLED_APPS = [
@@ -19,7 +15,6 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
-    "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Custom.
@@ -30,7 +25,7 @@ INSTALLED_APPS = [
 
 
 # Ordering of middleware matters.
-# See: https://docs.djangoproject.com/en/3.2/topics/http/middleware/#activating-middleware
+# See: https://docs.djangoproject.com/en/3.2/topics/http/middleware/#activating-middleware  # noqa: line_too_long
 # Custom Middlewares will have a comment above them.
 MIDDLEWARE = [
     # Custom.
@@ -39,6 +34,7 @@ MIDDLEWARE = [
     "apps.lib.middleware.json_data_loader.JsonDataLoaderMiddleware",
     # Third party.
     "corsheaders.middleware.CorsMiddleware",
+    # Default.
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -75,7 +71,7 @@ TEMPLATES = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa: line_too_long
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -107,9 +103,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR.joinpath("static/")
+STATIC_ROOT = BASE_DIR.joinpath("static")
 
-WSGI_APPLICATION = "config.wsgi.application"
+MEDIA_URL = "/MEDIA/"
+MEDIA_ROOT = BASE_DIR.joinpath("media")
+
 
 ROOT_URLCONF = "config.urls"
 
