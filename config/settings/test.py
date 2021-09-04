@@ -1,23 +1,23 @@
 from .base import *
-from .get_secrets import get_secret as secret
 
 DEBUG = False
 IS_LOCAL = False
 IS_TEST = True
 
 import os
+
 # TODO: Set up QA/Test db. Not essential right now.
-# DATABASES = {
-    # "default": {
-        # "ENGINE": "django.db.backends.postgresql",
-        # "OPTIONS": {"options": "-c search_path=lms,public"},
-        # "NAME": "lmslocal",
-        # "USER": "luke",
-        # "PASSWORD": secret("DB_PASSWORD"),
-        # "HOST": "localhost",
-        # "TEST": {"NAME": "lmslocal_test"},
-    # },
-# }
+
+DATABASES = {
+    "default": {
+        "ENGINE": os.environ.get("DB_ENGINE"),
+        "NAME": os.environ.get("DB_NAME"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "DB_PORT": os.environ.get("DB_PORT"),
+    },
+}
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
