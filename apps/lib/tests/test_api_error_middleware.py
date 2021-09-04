@@ -43,7 +43,7 @@ class TestAPIErrorMiddleware:
     @pytest.mark.django_db
     def test_exception_raised_locally(self, monkeypatch):
         monkeypatch.setattr(CreateUser, "post", MockException)
-        monkeypatch.setattr(settings, "IS_LOCAL", True)
+        monkeypatch.setattr(settings, 'IS_LOCAL', True)
 
         with pytest.raises(Exception):
             post(
@@ -60,7 +60,7 @@ class TestAPIErrorMiddleware:
     @pytest.mark.django_db
     def test_exception_raised_in_debug(self, monkeypatch):
         monkeypatch.setattr(CreateUser, "post", MockException)
-        monkeypatch.setattr(settings, "DEBUG", True)
+        monkeypatch.setattr(settings, 'DEBUG', True)
 
         with pytest.raises(Exception):
             post(
@@ -73,3 +73,4 @@ class TestAPIErrorMiddleware:
                     "username": "Chewbaca",
                 },
             )
+
