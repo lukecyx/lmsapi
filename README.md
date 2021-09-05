@@ -68,8 +68,7 @@ Note:
 The project is documented using Mkdocs.
 To view the docs:
 
-1. cd into the top level of the project.
-2. Run `mkdocs serve` and view at `localhost:8000/`.
+See [lmsapi-docs](https://github.com/lukecyx/lmsapi-docs)
 
 ## Testing
 
